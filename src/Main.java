@@ -1,42 +1,47 @@
+import Models.Cart;
 import Models.Product;
 import Models.Variant;
-import Models.VariantBasedProduct;
-import Models.WeightBasedProduct;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
+//import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Product Mango = new WeightBasedProduct("Mango","Mango.jp",150,1.0f);
-        Product Sugar = new VariantBasedProduct("Sugar","Sugar.jp",new ArrayList<>(
-                Arrays.asList(
-                        new Variant("1kg",23),
-                        new Variant("5kg",120)
-                )
-        ));
-        System.out.println(Mango);
-        System.out.println(Sugar);
-        //Add these products in List
-        List<Product> products = new ArrayList<>(
-                Arrays.asList(
-                        new WeightBasedProduct("Apple","Apple.jp",80,1.0f),
-                        new WeightBasedProduct("Orange","Orange.jp",100,1.5f),
-                        new VariantBasedProduct("Salt","SaltPck.jp",new ArrayList<>(
-                                Arrays.asList(new Variant("3kg",90),
-                                        new Variant("1kg",40)
-                                )
-                        ))
-                )
-        );
-        //Print all products in a single list...
-        System.out.println(products);
-        Product product1=new Product("Apple","aa.jpp");
-        Product product2=new Product("Apple","aa.jpp");
-        //check hashcode and equals of product
-        System.out.println(product1.hashCode());
-        System.out.println(product2.hashCode());
-        System.out.println(product2.equals(product1));
+        //Create Products
+        Product apple = new Product("Apple","",80,1.0f),
+                mango = new Product("Mango","",80,1.0f),
+                orange = new Product("Orange", "", 60, 2f),
+                kiwi =new Product("Kiwi","image",new ArrayList<>(
+                        Arrays.asList(
+                                new Variant("1kg",100),
+                                new Variant("500g",60)
+                        )
+                )),
+                Sugar = new Product("Sugar", "image",new ArrayList<>(
+                        Collections.singletonList(new Variant("500g", 40))
+                ));
+
+        Cart cart = new Cart();
+        //Adding items to our cart through list
+        cart.add(apple,5f);
+        cart.add(mango,3f);
+        cart.add(orange,2.5f);
+        cart.add(kiwi,kiwi.variants.get(1));
+        cart.add(kiwi,kiwi.variants.get(0));
+        cart.add(kiwi,kiwi.variants.get(1));
+        cart.add(Sugar,Sugar.variants.get(0));
+        cart.add(Sugar,Sugar.variants.get(0));
+        System.out.println(cart);
+
+        //Checking our remove methods
+        cart.remove(apple);
+        cart.remove(mango);
+        cart.decrement(kiwi,kiwi.variants.get(1));
+        //Checking our decrement method
+        cart.decrement(Sugar,Sugar.variants.get(0));
+        cart.decrement(Sugar,Sugar.variants.get(0));
+        System.out.println(cart);
     }
 }
