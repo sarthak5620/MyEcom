@@ -41,7 +41,6 @@ public class Main {
         cart.decrement(kiwi,kiwi.variants.get(1));
         //Checking our decrement method
         cart.decrement(Sugar,Sugar.variants.get(0));
-        cart.decrement(Sugar,Sugar.variants.get(0));
         System.out.println(cart);
     }
 }
