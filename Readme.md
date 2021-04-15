@@ -1,4 +1,4 @@
-MyEcom 
+MyEcom
 
 MyEcom is a basic design of working of a grocery app 
 
