@@ -8,6 +8,8 @@ The java code for this app is given below:-
 [Assignment4.2.2](https://github.com/sarthak5620/MyEcom/tree/master/src/Models1)
 ***
 #Preview of the project
+
+***
 ![2](https://user-images.githubusercontent.com/66621092/115152054-32520100-a08d-11eb-9453-93df40d5e96e.png)
 ![3](https://user-images.githubusercontent.com/66621092/115152067-4433a400-a08d-11eb-80d9-16e17c3639f8.png)
 ![4](https://user-images.githubusercontent.com/66621092/115152074-4990ee80-a08d-11eb-8579-6fbd51e67c5a.png)
