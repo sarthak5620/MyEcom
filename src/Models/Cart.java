@@ -3,7 +3,7 @@ package Models;
 import java.util.HashMap;
 
 public class Cart {
-    HashMap<String, CartItem> cartItems = new HashMap<>();
+   public HashMap<String, CartItem> cartItems = new HashMap<>();
     float total;
     int noOfItems;
 
@@ -57,9 +57,9 @@ public class Cart {
     }
 
     //Method to remove Weight Based Products
-    private void removeWBP(Product product) {
-        total -= cartItems.get(product.name).cost();
-        noOfItems--;
+   private void removeWBP(Product product) {
+     //   total -= cartItems.get(product.name).cost();
+      //  noOfItems--;
         cartItems.remove(product.name);
     }
 

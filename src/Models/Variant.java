@@ -1,7 +1,7 @@
 package Models;
 
 public class Variant {
-     public  String name;
+     public String name;
         float price;
 
         public Variant(String name, float price) {
